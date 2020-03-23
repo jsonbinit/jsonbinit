@@ -1,72 +1,60 @@
 <template>
   <div class="container">
     <div>
-      <logo />
       <h1 class="title">
-        jsonbinit details
+        JSON {🗑} IT!
       </h1>
-      <h2 class="subtitle">
-        A new way to store JSON on the fly
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <p class="apipar">
+        API Access: {{ apiaccess }}
+      </p>
+      <client-only>
+        <prism-editor class="codecontent" :code="code" language="js" :line-numbers="true" :readonly="true" />
+      </client-only>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import 'prismjs'
+import 'prismjs/themes/prism-tomorrow.css'
+import 'vue-prism-editor/dist/VuePrismEditor.css'
+
+import PrismEditor from 'vue-prism-editor'
 
 export default {
   components: {
-    Logo
+    PrismEditor
+  },
+  data: () => {
+    return {
+      code: 'Loading bin...',
+      apiaccess: 'test'
+    }
+  },
+  mounted () {
+    const id = this.$route.params.id
+    this.apiaccess = this.$apiservice.composeJSONBinUrl(id)
+    this.$apiservice.getJSON(id).then((response) => {
+      this.code = JSON.stringify(response.data, null, 2)
+    }).catch((error) => {
+      this.apiaccess = '-'
+      let resultJSON = {}
+      if (error.response.status === 404) {
+        resultJSON = `JSON '${id}' not found`
+      } else {
+        resultJSON = `Server error for JSON '${id}'`
+      }
+      this.code = JSON.stringify({
+        result: resultJSON
+      }, null, 2)
+    })
   }
 }
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.codecontent {
+  height: 300px;
+  width: 100%;
 }
 </style>

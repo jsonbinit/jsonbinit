@@ -7,7 +7,7 @@
       <h2 class="subtitle">
         Service to store JSON on the fly
       </h2>
-      <client-only placeholder="Loading...">
+      <client-only>
         <prism-editor class="codecontent" :code="code" language="js" :line-numbers="true" />
       </client-only>
       <div class="links">
@@ -42,41 +42,7 @@ export default {
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .codecontent {
   height: 300px;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 70px;
-  color: white;
-  letter-spacing: 1px;
-  text-align: center;
-
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: white;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-  text-align: center;
-}
-
-.links {
-  padding-top: 15px;
-  text-align: center;
 }
 </style>

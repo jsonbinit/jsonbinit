@@ -13,6 +13,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "nuxt": "^2.0.0",
     "prismjs": "^1.19.0",
     "vue-prism-editor": "^0.5.1"
