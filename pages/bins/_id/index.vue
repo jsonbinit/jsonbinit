@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div>
+    <div class="container__main">
       <h1 class="title">
         JSON {🗑} IT!
       </h1>
@@ -28,16 +28,15 @@ export default {
   data: () => {
     return {
       code: 'Loading bin...',
-      apiaccess: 'test'
+      apiaccess: '-'
     }
   },
   mounted () {
     const id = this.$route.params.id
-    this.apiaccess = this.$apiservice.composeJSONBinUrl(id)
     this.$apiservice.getJSON(id).then((response) => {
       this.code = JSON.stringify(response.data, null, 2)
+      this.apiaccess = this.$apiservice.composeJSONBinUrl(id)
     }).catch((error) => {
-      this.apiaccess = '-'
       let resultJSON = {}
       if (error.response.status === 404) {
         resultJSON = `JSON '${id}' not found`
@@ -54,7 +53,7 @@ export default {
 
 <style>
 .codecontent {
-  height: 300px;
+  height: 500px;
   width: 100%;
 }
 </style>

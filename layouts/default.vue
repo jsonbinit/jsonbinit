@@ -35,7 +35,7 @@ body {
   border: 1px solid white;
   color: white;
   text-decoration: none;
-  padding: 10px 30px;
+  padding: 20px 30px;
   margin-left: 15px;
 }
 
@@ -49,7 +49,10 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+
+.container__main {
+  width: 100%;
 }
 
 .title {
@@ -57,7 +60,7 @@ body {
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 70px;
+  font-size: 8.5vw;
   color: white;
   letter-spacing: 1px;
   text-align: center;
@@ -65,7 +68,7 @@ body {
 
 .subtitle {
   font-weight: 300;
-  font-size: 30px;
+  font-size: 20px;
   color: white;
   word-spacing: 5px;
   padding-bottom: 15px;
