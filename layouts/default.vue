@@ -29,6 +29,10 @@ body {
   color: white;
 }
 
+a {
+  color: white;
+}
+
 .button--grey {
   display: inline-block;
   border-radius: 4px;

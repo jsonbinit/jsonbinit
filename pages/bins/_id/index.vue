@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <div class="container__main">
-      <h1 class="title">
-        JSON {🗑} IT!
-      </h1>
+      <bin-header/>
       <p class="apipar">
         API Access: {{ apiaccess }}
       </p>
