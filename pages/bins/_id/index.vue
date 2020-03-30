@@ -32,7 +32,7 @@ export default {
   mounted () {
     const id = this.$route.params.id
     this.$apiservice.getJSON(id).then((response) => {
-      this.code = JSON.stringify(response.data, null, 2)
+      this.code = response.data.json
       this.apiaccess = this.$apiservice.composeJSONBinUrl(id)
     }).catch((error) => {
       let resultJSON = {}
