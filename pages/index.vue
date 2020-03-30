@@ -13,11 +13,11 @@
           class="codecontent"
           language="js"
           :line-numbers="true"
-          @change="checkCanSave"
+          @change="enableButton"
         />
       </client-only>
       <div class="links">
-        <a target="_blank" class="button--grey" @click="pushJson">Save ➡ 🗑</a>
+        <button :disabled="!buttonEnabled" @click="pushJson" target="_blank" class="button--grey">Save ➡ 🗑</button>
       </div>
       <bin-footer />
     </div>
@@ -38,7 +38,8 @@ export default {
   data: () => {
     return {
       code: '',
-      linenumbers: true
+      linenumbers: true,
+      buttonEnabled: false
     }
   },
   methods: {
@@ -50,19 +51,20 @@ export default {
       }
       return true
     },
-    checkCanSave (event) {
+    enableButton (event) {
       if (this.validateJson(event)) {
-        console.log('è json')
-        // this.code = event
+        this.buttonEnabled = true
       } else {
-        console.log('non è json')
+        this.buttonEnabled = false
       }
     },
     pushJson () {
-      console.log(this.code)
       this.$apiservice.postJSON(this.code).then((response) => {
         const id = response.data.uri
-        this.$router.push(`/bins/${id.substring(id.lastIndexOf('/') + 1)}`)
+        const path = `/bins/${id.substring(id.lastIndexOf('/') + 1)}`
+        this.$router.push(path)
+      }).catch((error) => {
+        alert(error)
       })
     }
   }
