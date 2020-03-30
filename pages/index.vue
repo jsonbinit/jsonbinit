@@ -59,7 +59,7 @@ export default {
       }
     },
     pushJson () {
-      this.$apiservice.postJSON(this.code).then((response) => {
+      this.$apiservice.postJSON(JSON.parse(this.code)).then((response) => {
         const id = response.data.uri
         const path = `/bins/${id.substring(id.lastIndexOf('/') + 1)}`
         this.$router.push(path)
@@ -70,9 +70,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.codecontent {
-  height: 400px;
-}
-</style>
