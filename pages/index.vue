@@ -60,8 +60,10 @@ export default {
     },
     pushJson () {
       this.$apiservice.postJSON(JSON.parse(this.code)).then((response) => {
-        const id = response.data.uri
-        const path = `/bins/${id.substring(id.lastIndexOf('/') + 1)}`
+        console.log(response)
+        const id = response.data.bin
+        const path = `/bins/${id}`
+
         this.$router.push(path)
       }).catch((error) => {
         alert(error)

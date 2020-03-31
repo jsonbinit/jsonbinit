@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="container__main">
-      <bin-header/>
+      <bin-header />
       <p class="apipar">
         API Access: {{ apiaccess }}
       </p>
@@ -32,7 +32,8 @@ export default {
   mounted () {
     const id = this.$route.params.id
     this.$apiservice.getJSON(id).then((response) => {
-      this.code = response.data.json
+      this.code = JSON.stringify(response.data.json, null, 2)
+      console.log(this.code)
       this.apiaccess = this.$apiservice.composeJSONBinUrl(id)
     }).catch((error) => {
       let resultJSON = {}

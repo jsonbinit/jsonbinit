@@ -7,7 +7,7 @@ export default class ApiService {
   };
 
   composeJSONBinUrl (jsonId) {
-    return this.apiUrl + `/${jsonId}`
+    return this.apiUrl + jsonId
   }
 
   getJSON (jsonId) {
