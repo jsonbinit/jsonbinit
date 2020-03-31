@@ -1,12 +1,25 @@
 <template>
   <div class="container">
-    <div class="container__main">
-      <bin-header>
-        Service to store JSON on the fly!
-        <nuxt-link to="/docs">
-          Read the Docs
-        </nuxt-link>for more info
-      </bin-header>
+    <div class="header-area">
+      <bin-header />
+      <div class="actions-bar">
+        <button
+          :disabled="!buttonEnabled"
+          target="_blank"
+          class="action"
+          @click="pushJson"
+        >
+          Save
+        </button>
+        <div class="clipboard">
+          Service to store JSON on the fly!
+          <nuxt-link to="/docs">
+            Read the Docs
+          </nuxt-link>for more info
+        </div>
+      </div>
+    </div>
+    <div class="main-area">
       <client-only>
         <prism-editor
           v-model="code"
@@ -16,11 +29,8 @@
           @change="enableButton"
         />
       </client-only>
-      <div class="links">
-        <button :disabled="!buttonEnabled" @click="pushJson" target="_blank" class="button--grey">Save ➡ 🗑</button>
-      </div>
-      <bin-footer />
     </div>
+    <bin-footer />
   </div>
 </template>
 
@@ -59,15 +69,18 @@ export default {
       }
     },
     pushJson () {
-      this.$apiservice.postJSON(JSON.parse(this.code)).then((response) => {
-        console.log(response)
-        const id = response.data.bin
-        const path = `/bins/${id}`
+      this.$apiservice
+        .postJSON(JSON.parse(this.code))
+        .then((response) => {
+          console.log(response)
+          const id = response.data.bin
+          const path = `/bins/${id}`
 
-        this.$router.push(path)
-      }).catch((error) => {
-        alert(error)
-      })
+          this.$router.push(path)
+        })
+        .catch((error) => {
+          alert(error)
+        })
     }
   }
 }

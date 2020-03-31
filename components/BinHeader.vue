@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <header>
     <nuxt-link to="/">
       <h1 class="title">
         JSON {🗑} IT!
@@ -9,7 +9,7 @@
       <slot></slot>
     </h2>
     <github-corner repo-url="https://github.com/jsonbinit" color="#1c1e20"/>
-  </div>
+  </header>
 </template>
 
 <script>

@@ -1,95 +1,87 @@
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+@import 'reset';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+
+$background: #333333;
+$color: #ededed;
+$bg-code: #2d2d2d;
+$action: #008cff;
+
+body{
+  font-family: 'IBM Plex Mono', monospace;
+  background: $background;
+  color: $color;
+  font-weight: 400;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-body {
-  background-color: #1c1e20;
-  color: white;
-}
-
-a {
-  color: white;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid white;
-  color: white;
+a{
+  color: $action;
   text-decoration: none;
-  padding: 20px 30px;
-  margin-left: 15px;
-  background: transparent;
+  font-weight: 700;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
-
-.container {
-  margin: 0 auto;
+.container{
+  display: flex;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-}
-
-.container__main {
-  width: 100%;
-  display: flex;
   flex-direction: column;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 3rem;
-  color: white;
-  letter-spacing: 1px;
-  text-align: center;
+.title{
+  padding: .5rem;
+  font-size: 1.25rem;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 20px;
-  color: white;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-  text-align: center;
+.action{
+  font-family: 'IBM Plex Mono', monospace;
+  background: $action;
+  color: $color;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: .5rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  &:disabled,&[disabled]{
+    color: rgba($color,.5);
+    cursor: not-allowed;
+  }
 }
-
-.apipar {
-  font-weight: 300;
-  font-size: 20px;
-  color: white;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-  text-align: center;
-}
-
-
-.codecontent {
-  height: 500px;
+.header-area{
+  display: flex;
+  box-sizing: border-box;
+  position: sticky;
   width: 100%;
+  top: 0;
+  background: rgba($background,.3);
+  backdrop-filter: blur(6px);
+  flex-direction: column;
+}
+.main-area{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.footer-area{
+position: fixed;
+width: 100%;
+bottom: 0;
+right: 0;
+padding: 1rem;
+justify-content: flex-end;
+font-size: .8rem;
+text-align: right;
+}
+
+.codecontent{
+ flex: 1;
+ max-height: 100%;
+ background: $bg-code;
+}
+
+.actions-bar{
+  display: flex;
+  .clipboard{
+    flex:1;
+    background: rgba($color,.2);
+    padding:.5rem;
+  }
 }
