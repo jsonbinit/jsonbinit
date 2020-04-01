@@ -1,4 +1,6 @@
 @import 'reset';
+@import 'transitions';
+@import 'typography';
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
 
 $background: #333333;
@@ -29,6 +31,7 @@ a{
 .title{
   padding: .5rem;
   font-size: 1.25rem;
+  margin: 0;
 }
 
 .action{
@@ -51,7 +54,7 @@ a{
   position: sticky;
   width: 100%;
   top: 0;
-  background: rgba($background,.3);
+  background: rgba(darken($background,10%),.3);
   backdrop-filter: blur(6px);
   flex-direction: column;
 }
@@ -105,20 +108,16 @@ text-align: right;
   color:$action;
 }
 
-.page-enter-active,
-.page-leave-active {
-  transition-property: opacity;
-  transition-timing-function: ease-in-out;
-  transition-duration: 500ms;
-}
-.page-enter,
-.page-leave-to {
-  opacity: 0;
+.jumbo{
+  background: $action;
+  min-height: 35vh;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+.content{
+  max-width: 600px;
+  padding: 1rem;
+  margin: 2rem auto;
 }
