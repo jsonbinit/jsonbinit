@@ -6,7 +6,15 @@
         <nuxt-link to="/" class="action">
           New
         </nuxt-link>
+
         <div class="clipboard">
+          <a
+            v-clipboard="() => apiaccess"
+            v-clipboard:success="clipboardSuccessHandler"
+            v-clipboard:error="clipboardErrorHandler"
+          >
+            <font-awesome-icon :icon="['fa', 'clone']" />
+          </a>
           {{ apiaccess }}
         </div>
       </div>
@@ -68,6 +76,14 @@ export default {
           2
         )
       })
+  },
+  methods: {
+    clipboardSuccessHandler ({ value, event }) {
+      this.$toast.show('Copied to clipboard!')
+    },
+    clipboardErrorHandler ({ value, event }) {
+      this.$toast.show('oops! something gone wrong!')
+    }
   }
 }
 </script>
