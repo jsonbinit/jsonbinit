@@ -17,6 +17,7 @@ a{
   color: $action;
   text-decoration: none;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .container{
@@ -83,4 +84,23 @@ text-align: right;
     background: rgba($color,.2);
     padding:.5rem;
   }
+}
+
+.toasted svg{
+  margin-right: 1rem;
+}
+
+.loading-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($background, 0.8);
+  text-align: center;
+  padding-top: 200px;
+  font-size: 3rem;
+  font-family: sans-serif;
+  z-index: 1000;
+  color:$action;
 }

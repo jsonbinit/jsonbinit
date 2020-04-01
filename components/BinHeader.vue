@@ -2,7 +2,7 @@
   <header>
     <nuxt-link to="/">
       <h1 class="title">
-        JSON {🗑} IT!
+        JSON{🗑}IT!
       </h1>
     </nuxt-link>
     <h2 class="subtitle">

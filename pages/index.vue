@@ -4,7 +4,7 @@
       <bin-header />
       <div class="actions-bar">
         <button :disabled="!buttonEnabled" target="_blank" class="action" @click="pushJson">
-          Save
+          <font-awesome-icon :icon="['fa', 'save']" /> Save
         </button>
         <div class="clipboard">
           Service to store JSON on the fly!
@@ -64,17 +64,31 @@ export default {
       }
     },
     pushJson () {
+      this.$nuxt.$loading.start()
       this.$apiservice
         .postJSON(JSON.parse(this.code))
         .then((response) => {
           console.log(response)
           const id = response.data.bin
           const path = `/bins/${id}`
-
+          this.$nuxt.$loading.finish()
           this.$router.push(path)
         })
         .catch((error) => {
-          this.$toast.show(error)
+          this.$toast.show(error, {
+            icon: (el) => {
+              return this.$getSvgIcons(el, 'fas', 'exclamation-triangle')
+            },
+            action: [
+              {
+                text: 'Cancel',
+                onClick: (e, toastObject) => {
+                  toastObject.goAway(0)
+                }
+              }
+            ]
+          })
+          this.$nuxt.$loading.finish()
         })
     }
   }

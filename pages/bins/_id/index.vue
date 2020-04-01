@@ -4,7 +4,7 @@
       <bin-header />
       <div class="actions-bar">
         <nuxt-link to="/" class="action">
-          New
+          <font-awesome-icon :icon="['fa', 'plus']" /> New
         </nuxt-link>
 
         <div class="clipboard">
@@ -54,35 +54,65 @@ export default {
   },
   mounted () {
     const id = this.$route.params.id
-    this.$apiservice
-      .getJSON(id)
-      .then((response) => {
-        this.code = JSON.stringify(response.data.json, null, 2)
-        console.log(this.code)
-        this.apiaccess = this.$apiservice.composeJSONBinUrl(id)
-      })
-      .catch((error) => {
-        let resultJSON = {}
-        if (error.response.status === 404) {
-          resultJSON = `JSON '${id}' not found`
-        } else {
-          resultJSON = `Server error for JSON '${id}'`
-        }
-        this.code = JSON.stringify(
-          {
-            result: resultJSON
-          },
-          null,
-          2
-        )
-      })
+    this.callApi(id)
   },
   methods: {
+    callApi (id) {
+      this.$nuxt.$loading.start()
+      this.$apiservice
+        .getJSON(id)
+        .then((response) => {
+          this.code = JSON.stringify(response.data.json, null, 2)
+
+          this.apiaccess = this.$apiservice.composeJSONBinUrl(id)
+          this.$nuxt.$loading.finish()
+        })
+        .catch((error) => {
+          let resultJSON = {}
+          if (error.response.status === 404) {
+            resultJSON = `JSON '${id}' not found`
+          } else {
+            resultJSON = `Server error for JSON '${id}'`
+          }
+          this.code = JSON.stringify(
+            {
+              result: resultJSON
+            },
+            null,
+            2
+          )
+          this.$nuxt.$loading.finish()
+        })
+    },
     clipboardSuccessHandler ({ value, event }) {
-      this.$toast.show('Copied to clipboard!')
+      this.$toast.show('Copied to clipboard!', {
+        icon: (el) => {
+          return this.$getSvgIcons(el, 'fas', 'check')
+        },
+        action: [
+          {
+            text: 'Cancel',
+            onClick: (e, toastObject) => {
+              toastObject.goAway(0)
+            }
+          }
+        ]
+      })
     },
     clipboardErrorHandler ({ value, event }) {
-      this.$toast.show('oops! something gone wrong!')
+      this.$toast.show('Copied to clipboard!', {
+        icon: (el) => {
+          return this.$getSvgIcons(el, 'fas', 'exclamation-triangle')
+        },
+        action: [
+          {
+            text: 'Cancel',
+            onClick: (e, toastObject) => {
+              toastObject.goAway(0)
+            }
+          }
+        ]
+      })
     }
   }
 }

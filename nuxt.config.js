@@ -19,7 +19,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: '~/components/loading.vue',
   /*
    ** Global CSS
    */
@@ -58,7 +58,8 @@ export default {
   toast: {
     theme: 'toasted-primary',
     position: 'top-center',
-    duration: 5000
+    duration: 3000,
+    iconPack: 'callback'
   },
   /*
    ** Build configuration
