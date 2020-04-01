@@ -58,7 +58,9 @@ export default {
   },
   methods: {
     callApi (id) {
-      this.$nuxt.$loading.start()
+      this.$nextTick(() => {
+        this.$nuxt.$loading.start()
+      })
       this.$apiservice
         .getJSON(id)
         .then((response) => {

@@ -35,6 +35,8 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module'
   ],
+  pageTransition: 'page',
+  transition: 'fade',
   /*
    ** Nuxt.js modules
    */

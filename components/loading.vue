@@ -1,7 +1,9 @@
 <template lang="html">
-  <div class="loading-page" v-if="loading">
-    <p><font-awesome-icon :icon="['fas', 'spinner']" pulse /></p>
-  </div>
+  <transition name="fade">
+    <div v-if="loading" class="loading-page">
+      <p><font-awesome-icon :icon="['fas', 'spinner']" pulse /></p>
+    </div>
+  </transition>
 </template>
 
 <script>
