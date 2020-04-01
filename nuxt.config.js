@@ -40,7 +40,7 @@ export default {
    */
   modules: ['@nuxtjs/toast'],
   toast: {
-    theme: 'bubble',
+    theme: 'toasted-primary',
     position: 'top-center',
     duration: 5000
   },
