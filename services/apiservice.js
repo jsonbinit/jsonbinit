@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default class ApiService {
-  apiUrl = 'http://161.35.18.103:8080/api/bins/';
+  apiUrl = 'http://161.35.18.103:8080/api/sbins/';
   apiHeaders = {
     'Content-Type': 'application/json'
   };

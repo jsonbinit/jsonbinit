@@ -3,12 +3,7 @@
     <div class="header-area">
       <bin-header />
       <div class="actions-bar">
-        <button
-          :disabled="!buttonEnabled"
-          target="_blank"
-          class="action"
-          @click="pushJson"
-        >
+        <button :disabled="!buttonEnabled" target="_blank" class="action" @click="pushJson">
           Save
         </button>
         <div class="clipboard">
@@ -79,7 +74,7 @@ export default {
           this.$router.push(path)
         })
         .catch((error) => {
-          alert(error)
+          this.$toast.show(error)
         })
     }
   }
