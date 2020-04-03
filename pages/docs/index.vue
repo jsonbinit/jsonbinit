@@ -8,16 +8,56 @@
         <h1>API Documentation</h1>
       </div>
       <div class="content">
-        <h1>Title</h1>
-        <h2>Subtitle</h2>
-        <h3>Title 3</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo excepturi placeat doloribus, quidem voluptas, dolor cupiditate in a aperiam molestias minima. Dolorem iste deleniti cum laborum praesentium culpa quaerat enim.</p>
-        <ul>
-          <li>asdasd</li>
-          <li>asdasd</li>
-          <li>asdasd</li>
-        </ul>
+        <h1>Store a JSON</h1>
+        <h2>POST http://api.jsonbin.it/api/bins/</h2>
+        <p>Store a JSON calling this API. The JSON you want to store must be the body of the request.</p>
+        <h3>Response example</h3>
+        <client-only>
+          <prism-editor
+            class="codecontent"
+            :code="storeRespCode"
+            language="js"
+            :line-numbers="false"
+            :readonly="true"
+          />
+        </client-only>
+      </div>
+      <div class="content">
+        <h1>Retrieve a JSON</h1>
+        <h2>GET http://api.jsonbin.it/api/bins/:binid</h2>
+        <p>Retrieve a generated JSON calling this API. You'll receive the requested JSON in the response.</p>
+        <h3>Response example</h3>
+        <client-only>
+          <prism-editor
+            class="codecontent"
+            :code="retrieveRespCode"
+            language="js"
+            :line-numbers="false"
+            :readonly="true"
+          />
+        </client-only>
       </div>
     </div>
+    <bin-footer />
   </div>
 </template>
+
+<script>
+import 'prismjs'
+import 'prismjs/themes/prism-tomorrow.css'
+import 'vue-prism-editor/dist/VuePrismEditor.css'
+
+import PrismEditor from 'vue-prism-editor'
+
+export default {
+  components: {
+    PrismEditor
+  },
+  data: () => {
+    return {
+      storeRespCode: '{"bin" : "AH1232O"}',
+      retrieveRespCode: '{"bin" : "AH1232O"}'
+    }
+  }
+}
+</script>
