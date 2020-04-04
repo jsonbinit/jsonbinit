@@ -9,7 +9,10 @@
       </div>
       <div class="content">
         <h1>Store a JSON</h1>
-        <h2>POST http://api.jsonbin.it/api/bins/</h2>
+        <h2>POST </h2>
+        <em>http://api.jsonbin.it/api/bins/</em>
+        <hr>
+        <br>
         <p>Store a JSON calling this API. The JSON you want to store must be the body of the request.</p>
         <h3>Response example</h3>
         <client-only>
@@ -24,7 +27,10 @@
       </div>
       <div class="content">
         <h1>Retrieve a JSON</h1>
-        <h2>GET http://api.jsonbin.it/api/bins/:binid</h2>
+        <h2>GET </h2>
+        <em>http://api.jsonbin.it/api/bins/:binid</em>
+        <hr>
+        <br>
         <p>Retrieve a generated JSON calling this API. You'll receive the requested JSON in the response.</p>
         <h3>Response example</h3>
         <client-only>
