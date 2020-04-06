@@ -10,7 +10,7 @@
           Service to store JSON on the fly!
           <nuxt-link to="/docs">
             Read the Docs
-          </nuxt-link>for more info
+          </nuxt-link>
         </div>
       </div>
     </div>
