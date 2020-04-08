@@ -64,7 +64,7 @@ export default {
       this.$apiservice
         .getJSON(id)
         .then((response) => {
-          this.code = JSON.stringify(response.data.json, null, 2)
+          this.code = JSON.stringify(response.data, null, 2)
 
           this.apiaccess = this.$apiservice.composeJSONBinUrl(id)
           this.$nuxt.$loading.finish()

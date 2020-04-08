@@ -94,3 +94,8 @@ export default {
   }
 }
 </script>
+<style>
+.prism-editor__code {
+  min-height: 80vh;
+}
+</style>

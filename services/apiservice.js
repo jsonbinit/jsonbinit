@@ -17,9 +17,8 @@ export default class ApiService {
   }
 
   postJSON (json) {
-    return axios.post(this.apiUrl, {
-      headers: this.apiHeaders,
-      json
+    return axios.post(this.apiUrl, json, {
+      headers: this.apiHeaders
     })
   }
 }
