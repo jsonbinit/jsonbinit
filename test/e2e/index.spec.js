@@ -16,7 +16,7 @@ describe('Render e2e', () => {
     await new Builder(nuxtInstance).build()
     nuxtInstance.listen(4000, 'localhost')
     done()
-  }, 20000)
+  }, 40000)
   test('index', async (t) => {
     const context = {}
     const { html } = await nuxtInstance.renderRoute('/', context)
