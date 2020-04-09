@@ -20,7 +20,7 @@ describe('Render e2e', () => {
   test('index', async (t) => {
     const context = {}
     const { html } = await nuxtInstance.renderRoute('/', context)
-    expect(html).toContain('<h1 class="red">Hello world!</h1>')
+    expect(html).toContain('<!doctype html>')
   })
   afterEach((done) => {
     nuxtInstance.close()
