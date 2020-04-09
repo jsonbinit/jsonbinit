@@ -2,7 +2,7 @@
   <div class="container">
     <div class="container__main">
       <div class="header-area">
-        <bin-header />
+        <bin-header :hidegithub="true" />
       </div>
       <div class="jumbo">
         <h1>API Documentation</h1>

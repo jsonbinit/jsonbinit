@@ -5,7 +5,7 @@
         JSON{🗑}IT!
       </h1>
     </nuxt-link>
-    <github-corner repo-url="https://github.com/jsonbinit" color="#2d2d2d" fill-color="#008cff" />
+    <github-corner v-if="!hidegithub" repo-url="https://github.com/jsonbinit" color="#2d2d2d" fill-color="#008cff" />
   </header>
 </template>
 
@@ -13,6 +13,12 @@
 import GithubCorner from '~/components/GithubCorner'
 
 export default {
+  props: {
+    hidegithub: {
+      type: Boolean,
+      default: false
+    }
+  },
   components: {
     GithubCorner
   }
