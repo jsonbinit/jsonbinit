@@ -2,9 +2,11 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
-    '^vue$': 'vue/dist/vue.common.js'
+    '^vue$': 'vue/dist/vue.common.js',
+    '\\.(css|less|scss)$': 'identity-obj-proxy'
   },
   moduleFileExtensions: [
+    'css',
     'js',
     'vue',
     'json'

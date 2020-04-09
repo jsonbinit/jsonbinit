@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 export default class ApiService {
-
   constructor () {
     this.apiUrl = 'https://api.jsonbin.it/bins/'
     this.apiHeaders = {
