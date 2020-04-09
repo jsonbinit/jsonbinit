@@ -1,10 +1,13 @@
 import axios from 'axios'
 
 export default class ApiService {
-  apiUrl = 'https://api.jsonbin.it/bins/';
-  apiHeaders = {
-    'Content-Type': 'application/json'
-  };
+
+  constructor () {
+    this.apiUrl = 'https://api.jsonbin.it/bins/'
+    this.apiHeaders = {
+      'Content-Type': 'application/json'
+    }
+  }
 
   composeJSONBinUrl (jsonId) {
     return this.apiUrl + jsonId
