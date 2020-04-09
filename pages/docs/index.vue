@@ -14,6 +14,15 @@
         <hr>
         <br>
         <p>Store a JSON calling this API. The JSON you want to store must be the body of the request.</p>
+        <client-only>
+          <prism-editor
+            class="codecontent"
+            :code="retrieveRespCode"
+            language="js"
+            :line-numbers="false"
+            :readonly="true"
+          />
+        </client-only>
         <h3>Response example</h3>
         <client-only>
           <prism-editor
@@ -61,8 +70,8 @@ export default {
   },
   data: () => {
     return {
-      storeRespCode: '{"bin" : "AH1232O"}',
-      retrieveRespCode: '{"bin" : "AH1232O"}'
+      storeRespCode: '{"bin" : "l088fgWQ"}',
+      retrieveRespCode: '{\n  "value" : 2000 \n}'
     }
   }
 }
