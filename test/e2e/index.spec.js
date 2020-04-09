@@ -16,12 +16,13 @@ describe('Render e2e', () => {
     await new Builder(nuxtInstance).build()
     nuxtInstance.listen(4000, 'localhost')
     done()
-  }, 40000)
-  test('index', async (t) => {
+  }, 20000)
+  test('index', async (done) => {
     const context = {}
     const { html } = await nuxtInstance.renderRoute('/', context)
     expect(html).toContain('<!doctype html>')
-  })
+    done()
+  }, 2000)
   afterEach((done) => {
     nuxtInstance.close()
     done()
