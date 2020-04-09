@@ -8,11 +8,18 @@ $color: #ededed;
 $bg-code: #2d2d2d;
 $action: #008cff;
 
+html{
+  scrollbar-color: rgba(darken($background,10%),.6) rgba(darken($background,10%),.3);
+  scrollbar-width: 1rem;
+}
+
+
 body{
   font-family: 'IBM Plex Mono', monospace;
   background: $background;
   color: $color;
   font-weight: 400;
+
 }
 
 a{
@@ -26,6 +33,7 @@ a{
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+
 }
 
 .title{
@@ -92,6 +100,8 @@ text-align: right;
  flex: 1;
  max-height: 100%;
  background: $bg-code;
+ scrollbar-color: rgba(darken($background,10%),.6) rgba(darken($background,10%),.3);
+ scrollbar-width: 1rem;
 }
 
 .actions-bar{
