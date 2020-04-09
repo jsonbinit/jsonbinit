@@ -74,11 +74,18 @@ position: fixed;
 width: 100%;
 bottom: 0;
 right: 0;
-padding: 1rem;
+padding: .25rem;
 justify-content: flex-end;
 font-size: .8rem;
 text-align: right;
 }
+
+.code-area{
+  flex: 1;
+  margin-bottom: 1.75rem;
+  position: relative;
+}
+
 
 .codecontent{
  flex: 1;

@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    <div class="main-area">
+    <div class="main-area code-area">
       <client-only>
         <prism-editor
           v-model="code"
@@ -92,8 +92,8 @@ export default {
   }
 }
 </script>
-<style>
-.prism-editor__code {
-  min-height: 80vh;
+<style lang="scss" scoped>
+.codecontent{
+  position:absolute;
 }
 </style>

@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div class="main-area">
+    <div class="main-area code-area">
       <client-only>
         <prism-editor
           class="codecontent"
@@ -119,3 +119,8 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.codecontent{
+  position:absolute;
+}
+</style>
