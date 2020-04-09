@@ -1,6 +1,10 @@
 # JSON {🗑} IT!
+A new way to store JSON on the fly
 
-> A new way to store JSON on the fly
+[![codecov](https://codecov.io/gh/jsonbinit/jsonbinit/branch/master/graph/badge.svg)](https://codecov.io/gh/jsonbinit/jsonbinit)
+[![Build Status](https://travis-ci.org/jsonbinit/jsonbinit.svg?branch=master)](https://travis-ci.org/jsonbinit/jsonbinit)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/jsonbinit/jsonbinit/blob/master/LICENSE)
+
 
 ## Build Setup
 
