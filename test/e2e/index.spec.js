@@ -23,8 +23,8 @@ describe('Render e2e', () => {
     expect(html).toContain('<!doctype html>')
     done()
   }, 2000)
-  afterEach((done) => {
-    nuxtInstance.close()
+  afterEach(async (done) => {
+    await nuxtInstance.close()
     done()
   })
 })
