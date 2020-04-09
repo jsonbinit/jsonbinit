@@ -48,16 +48,15 @@ export default {
     }
   },
   methods: {
-    validateJson (json) {
+    isAValidJSON (jsonStr) {
       try {
-        JSON.parse(json)
+        return (typeof JSON.parse(jsonStr) === 'object')
       } catch (e) {
         return false
       }
-      return true
     },
     enableButton (event) {
-      if (this.validateJson(event)) {
+      if (this.isAValidJSON(event)) {
         this.buttonEnabled = true
       } else {
         this.buttonEnabled = false
@@ -68,7 +67,6 @@ export default {
       this.$apiservice
         .postJSON(JSON.parse(this.code))
         .then((response) => {
-          console.log(response)
           const id = response.data.bin
           const path = `/bins/${id}`
           this.$nuxt.$loading.finish()

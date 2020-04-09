@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <transition name="fade">
     <div v-if="loading" class="loading-page">
       <p><font-awesome-icon :icon="['fas', 'spinner']" pulse /></p>
