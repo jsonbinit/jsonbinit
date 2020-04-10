@@ -11,26 +11,6 @@ import '@/plugins/global'
 Vue.prototype.$nuxt = {
   $loading: { start: () => {} }
 }
-jest.mock('axios')
-
-axios.get.mockImplementation((url) => {
-  let err
-  switch (url) {
-    case 'https://api.jsonbin.it/bins/1':
-      return Promise.resolve({ data: { data: 3 } })
-    case 'https://api.jsonbin.it/bins/2':
-      err = new Error('')
-      err.response = { status: 404 }
-      return Promise.reject(err)
-    case 'https://api.jsonbin.it/bins/D1TT0':
-      err = new Error('')
-      err.response = { status: 500 }
-      return Promise.reject(err)
-  }
-})
-// jest.mock('axios', () => ({
-//   get: jest.fn(() => Promise.resolve({ data: { data: 3 } }))
-// }))
 
 describe('Bin reading page', () => {
   // eslint-disable-next-line no-unused-expressions
