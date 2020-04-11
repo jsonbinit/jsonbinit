@@ -63,6 +63,9 @@ export default {
     duration: 3000,
     iconPack: 'callback'
   },
+  generate: {
+    fallback: true
+  },
   /*
    ** Build configuration
    */
