@@ -1,5 +1,13 @@
+import Vue from 'vue'
 import { shallowMount } from '@vue/test-utils'
 import DocsPage from '@/pages/docs/index.vue'
+
+Vue.prototype.$nuxt = {
+  $loading: {
+    start: () => {},
+    finish: () => {}
+  }
+}
 
 describe('Documentation page', () => {
   // eslint-disable-next-line no-unused-expressions

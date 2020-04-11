@@ -13,14 +13,14 @@
 import GithubCorner from '~/components/GithubCorner'
 
 export default {
+  components: {
+    GithubCorner
+  },
   props: {
     hidegithub: {
       type: Boolean,
       default: false
     }
-  },
-  components: {
-    GithubCorner
   }
 }
 </script>

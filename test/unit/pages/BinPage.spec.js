@@ -9,7 +9,10 @@ import '@/plugins/vue-inject'
 import '@/plugins/global'
 
 Vue.prototype.$nuxt = {
-  $loading: { start: () => {} }
+  $loading: {
+    start: () => {},
+    finish: () => {}
+  }
 }
 
 describe('Bin reading page', () => {
@@ -51,6 +54,9 @@ describe('Bin reading page', () => {
   it('fetch 500 on mount', async () => {
     Vue.prototype.$route = {
       params: { id: 'D1TT0' }
+    }
+    Vue.prototype.$toast = {
+      show: jest.fn()
     }
     const wrapper = shallowMount(BinPage, {
       stubs: [

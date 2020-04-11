@@ -86,6 +86,7 @@ export default {
           this.$nuxt.$loading.finish()
         })
     },
+    /* istanbul ignore next */
     clipboardSuccessHandler ({ value, event }) {
       this.$toast.show('Copied to clipboard!', {
         icon: (el) => {
@@ -101,6 +102,7 @@ export default {
         ]
       })
     },
+    /* istanbul ignore next */
     clipboardErrorHandler ({ value, event }) {
       this.$toast.show('Copied to clipboard!', {
         icon: (el) => {

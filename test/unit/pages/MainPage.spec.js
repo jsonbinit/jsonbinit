@@ -14,6 +14,10 @@ Vue.prototype.$nuxt = {
   }
 }
 
+Vue.prototype.$toast = {
+  show: jest.fn()
+}
+
 describe('Index page', () => {
   // eslint-disable-next-line no-unused-expressions
   it('is a Vue instance', () => {

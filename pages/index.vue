@@ -73,6 +73,7 @@ export default {
           this.$router.push(path)
         })
         .catch((error) => {
+          /* istanbul ignore next */
           this.$toast.show(error, {
             icon: (el) => {
               return this.$getSvgIcons(el, 'fas', 'exclamation-triangle')
