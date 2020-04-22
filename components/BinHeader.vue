@@ -2,7 +2,7 @@
   <header>
     <nuxt-link to="/">
       <h1 class="title">
-        JSON{🗑}IT!
+        JSON{🗑}IT! <span class="version-claim">&nbsp;BETA&nbsp;</span>
       </h1>
     </nuxt-link>
     <github-corner v-if="!hidegithub" repo-url="https://github.com/jsonbinit" color="#FFF" fill-color="#008cff" />
@@ -24,3 +24,11 @@ export default {
   }
 }
 </script>
+
+<style>
+.version-claim {
+    background-color: yellow;
+    color:black;
+    font-size: 0.8rem;
+}
+</style>

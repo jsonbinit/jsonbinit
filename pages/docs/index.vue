@@ -70,7 +70,7 @@ export default {
   },
   data: () => {
     return {
-      storeRespCode: '{"bin" : "l088fgWQ"}',
+      storeRespCode: '{ "bin" : "l088fgWQ" }',
       retrieveRespCode: '{\n  "value" : 2000 \n}'
     }
   }
