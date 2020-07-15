@@ -11,6 +11,7 @@
           <nuxt-link to="/docs">
             Read the Docs
           </nuxt-link>
+          <font-awesome-icon class="themer" :icon="['fa', 'sun']" @click="changeTheme" />
         </div>
       </div>
     </div>
@@ -55,6 +56,14 @@ export default {
         return false
       }
     },
+    changeTheme () {
+      const head = document.getElementsByTagName('html')[0]
+      if (head.className === 'light-mode') {
+        head.className = 'not-dark'
+      } else {
+        head.className = 'light-mode'
+      }
+    },
     enableButton (event) {
       if (this.isAValidJSON(event)) {
         this.buttonEnabled = true
@@ -96,5 +105,19 @@ export default {
 <style lang="scss" scoped>
 .codecontent{
   position:absolute;
+}
+.themer {
+  position: relative;
+  top: 0px;
+  cursor: pointer;
+  padding: 7px;
+  color: #ededed;
+  border: 2px solid;
+  margin: 0;
+  border-radius: 5px;
+  transition: all 0.1s ease;
+}
+.themer:hover {
+  top: -3px;
 }
 </style>

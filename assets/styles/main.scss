@@ -8,6 +8,10 @@ $color: #ededed;
 $bg-code: #2d2d2d;
 $action: #008cff;
 
+.not-dark {
+  @import "light-mode";
+}
+
 html{
   scrollbar-color: rgba(darken($background,10%),.6) rgba(darken($background,10%),.3);
   scrollbar-width: 1rem;
