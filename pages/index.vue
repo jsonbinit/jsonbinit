@@ -11,7 +11,7 @@
           <nuxt-link to="/docs">
             Read the Docs
           </nuxt-link>
-          <font-awesome-icon class="themer" :icon="['fa', 'sun']" @click="changeTheme" />
+          <theme-switcher />
         </div>
       </div>
     </div>
@@ -36,10 +36,12 @@ import 'prismjs/themes/prism-tomorrow.css'
 import 'vue-prism-editor/dist/VuePrismEditor.css'
 
 import PrismEditor from 'vue-prism-editor'
+import ThemeSwitcher from '@/components/ThemeSwitcher'
 
 export default {
   components: {
-    PrismEditor
+    PrismEditor,
+    ThemeSwitcher
   },
   data: () => {
     return {
@@ -54,14 +56,6 @@ export default {
         return (typeof JSON.parse(jsonStr) === 'object')
       } catch (e) {
         return false
-      }
-    },
-    changeTheme () {
-      const head = document.getElementsByTagName('html')[0]
-      if (head.className === 'light-mode') {
-        head.className = 'not-dark'
-      } else {
-        head.className = 'light-mode'
       }
     },
     enableButton (event) {
@@ -105,19 +99,5 @@ export default {
 <style lang="scss" scoped>
 .codecontent{
   position:absolute;
-}
-.themer {
-  position: relative;
-  top: 0px;
-  cursor: pointer;
-  padding: 7px;
-  color: #ededed;
-  border: 2px solid;
-  margin: 0;
-  border-radius: 5px;
-  transition: all 0.1s ease;
-}
-.themer:hover {
-  top: -3px;
 }
 </style>

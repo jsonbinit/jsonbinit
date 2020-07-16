@@ -16,6 +16,7 @@
             <font-awesome-icon :icon="['fa', 'clone']" />
           </a>
           {{ apiaccess }}
+          <theme-switcher />
         </div>
       </div>
     </div>
@@ -41,10 +42,12 @@ import 'prismjs/themes/prism-tomorrow.css'
 import 'vue-prism-editor/dist/VuePrismEditor.css'
 
 import PrismEditor from 'vue-prism-editor'
+import ThemeSwitcher from '@/components/ThemeSwitcher'
 
 export default {
   components: {
-    PrismEditor
+    PrismEditor,
+    ThemeSwitcher
   },
   data: () => {
     return {
