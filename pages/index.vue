@@ -11,7 +11,6 @@
           <nuxt-link to="/docs">
             Read the Docs
           </nuxt-link>
-          <theme-switcher />
         </div>
       </div>
     </div>
@@ -36,12 +35,10 @@ import 'prismjs/themes/prism-tomorrow.css'
 import 'vue-prism-editor/dist/VuePrismEditor.css'
 
 import PrismEditor from 'vue-prism-editor'
-import ThemeSwitcher from '@/components/ThemeSwitcher'
 
 export default {
   components: {
-    PrismEditor,
-    ThemeSwitcher
+    PrismEditor
   },
   data: () => {
     return {
@@ -49,6 +46,9 @@ export default {
       linenumbers: true,
       buttonEnabled: false
     }
+  },
+  mounted () {
+    document.getElementsByTagName('html')[0].className = localStorage.getItem('themeMode')
   },
   methods: {
     isAValidJSON (jsonStr) {
