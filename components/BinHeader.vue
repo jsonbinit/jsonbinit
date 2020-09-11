@@ -5,16 +5,19 @@
         JSON{🗑}IT! <span class="version-claim">&nbsp;BETA&nbsp;</span>
       </h1>
     </nuxt-link>
+    <theme-switcher />
     <github-corner v-if="!hidegithub" repo-url="https://github.com/jsonbinit" color="#FFF" fill-color="#008cff" />
   </header>
 </template>
 
 <script>
 import GithubCorner from '~/components/GithubCorner'
+import ThemeSwitcher from '~/components/ThemeSwitcher'
 
 export default {
   components: {
-    GithubCorner
+    GithubCorner,
+    ThemeSwitcher
   },
   props: {
     hidegithub: {
