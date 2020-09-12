@@ -34,7 +34,6 @@ export default {
   position: absolute;
   top: 6px;
   left: 220px;
-  z-index: 200;
   background: #ededed;
   border: 2px solid #2b2626;
   width: 48px;
@@ -48,18 +47,16 @@ export default {
   border: 2px solid #ededed;
 }
 .toggle:before {
-  content: "";
+  content: url('~assets/sun-solid.svg');
   position: absolute;
   top: 4px;
   left: 2px;
   width: 16px;
   height: 16px;
-  background: #00151f;
-  border-radius: 50%;
   transition: 0.5s;
 }
 .toggle.active:before {
+  content: url('~assets/moon-solid.svg');;
   left: 27px;
-  background: #ededed;
 }
 </style>
