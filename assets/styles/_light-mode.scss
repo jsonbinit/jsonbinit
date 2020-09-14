@@ -1,0 +1,91 @@
+$background: #ededed;
+$color: #0e0104;
+$bg-color: #e2e7d8; 
+$symbol-color: black;
+$string-color: #008cff;
+$number-color: green;
+$not-valid: #ff0000;
+
+.code-area > {
+  div  {
+    > pre {
+      background: $background
+    }
+  }
+}
+.token.punctuation {
+  color: $symbol-color;
+}
+.token.operator {
+  color:$symbol-color;
+}
+.token.string {
+  color: $string-color
+}
+.token.number {
+  color: $number-color;
+}
+
+.token.comment {
+  color: $symbol-color;
+}
+.prism-editor__line-numbers {
+  background-color: $background;
+}
+.prism-editor__line-number {
+  background-color: $background;
+}
+
+.prism-editor__line-width-calc {
+  background-color: $background;
+}
+code[class*="language-"],
+pre[class*="language-"] {
+  color: $not-valid;
+}
+
+footer {
+  background-color: $background;
+}
+
+html{
+  scrollbar-color: rgba(darken($background,10%),.6) rgba(darken($background,10%),.3);
+}
+
+body{
+  background: $background;
+  color: $color;
+}
+
+a{
+  color: $action;
+}
+
+.container{
+  background: rgba(darken($background,10%),.3);
+}
+
+.action{
+  background: $action;
+  color: $background;
+  &:disabled,&[disabled]{
+    color: rgba($background,.5);
+    cursor: not-allowed;
+  }
+}
+
+// /* Track */
+::-webkit-scrollbar-track {
+   background: rgba(darken($background,10%),.3);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(darken($background,10%),.6);
+  border-radius: .375rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darken($background,10%);
+}

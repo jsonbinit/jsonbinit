@@ -42,6 +42,7 @@ export default {
    */
   modules: [
     '@nuxtjs/toast',
+    '@nuxtjs/color-mode',
     [
       'nuxt-fontawesome', {
         imports: [
