@@ -47,6 +47,9 @@ export default {
       buttonEnabled: false
     }
   },
+  mounted () {
+    document.getElementsByTagName('html')[0].className = localStorage.getItem('themeMode')
+  },
   methods: {
     isAValidJSON (jsonStr) {
       try {

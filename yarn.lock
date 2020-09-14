@@ -1234,6 +1234,14 @@
     webpack-node-externals "^1.7.2"
     webpackbar "^4.0.0"
 
+"@nuxtjs/color-mode@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/color-mode/-/color-mode-1.0.0.tgz#b17a8938789499dc42dd066ca9796657571abb5d"
+  integrity sha512-AkBGTQSXZF2+6KUr7u1M/LpP+zeTk1U/ysVfGotGX2yVDufADE90dCC93+Rfu+Z7U/SW59KJD3MD3/S6s5d6Gg==
+  dependencies:
+    defu "^1.0.0"
+    lodash.template "^4.5.0"
+
 "@nuxtjs/eslint-config@^2.0.0":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@nuxtjs/eslint-config/-/eslint-config-2.0.2.tgz#ff521ee1c0b875ac340f17ed656db213b6af854e"
