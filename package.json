@@ -36,7 +36,7 @@
     "eslint-plugin-nuxt": ">=0.4.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.1.0",
-    "jsdom": "^16.2.2",
+    "jsdom": "^16.5.0",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
     "vue-jest": "^4.0.0-0"
